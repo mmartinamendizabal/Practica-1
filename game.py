@@ -18,8 +18,20 @@ for i in range(0, times):
         number_2 = randrange(10)
     # Se imprime la cuenta.
     print(f"{i+1}- ¿Cuánto es {number_1} {operator} {number_2}?")
-    # Le pedimos al usuario el resultado
-    result = input("resultado: ")
+    # Le pedimos al usuario el resultado y lo convertimos a integer para operar con él
+    result = int(input("resultado: "))
+    if (operator=="+"):
+        control=number_1+number_2
+    elif (operator=="-"):
+        control=number_1-number_2
+    elif (operator=="*"):
+        control=number_1*number_2
+    elif (operator=="/"):
+        control=number_1/number_2
+    if (control==result):
+        print("Correcto!")
+    else:
+        print("Incorrecto :(")
 # Al terminar toda la cantidad de cuentas por resolver.
 # Se vuelve a tomar la fecha y la hora.
 end_time = datetime.now()
