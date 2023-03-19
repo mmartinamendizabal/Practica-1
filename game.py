@@ -8,6 +8,9 @@ times = 5
 # Esto toma la fecha y hora actual.
 init_time = datetime.now()
 print(f"¡Veremos cuanto tardas en responder estas {times} operaciones!")
+#Variables para contabilizar las respuestas
+correct=0
+incorrect=0
 for i in range(0, times):
     # Se eligen números y operador al azar
     number_1 = randrange(10)
@@ -30,8 +33,10 @@ for i in range(0, times):
         control=number_1/number_2
     if (control==result):
         print("Correcto!")
+        correct+=1
     else:
         print("Incorrecto :(")
+        incorrect+=1
 # Al terminar toda la cantidad de cuentas por resolver.
 # Se vuelve a tomar la fecha y la hora.
 end_time = datetime.now()
@@ -39,3 +44,4 @@ end_time = datetime.now()
 total_time = end_time - init_time
 # Mostramos ese tiempo en segundos.
 print(f"\n Tardaste {total_time.seconds} segundos.")
+print(f"\n Tuviste {correct} respuestas correctas y {incorrect} respuestas incorrectas.")
